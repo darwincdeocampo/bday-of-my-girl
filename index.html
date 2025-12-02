@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Queen ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            font-family: 'Segoe UI', cursive, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: #d81e63;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+            animation: pulse 2s infinite;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .envelope-container {
+            position: relative;
+            width: 200px;
+            height: 140px;
+            margin: 30px auto;
+            perspective: 800px;
+            z-index: 20;
+        }
+
+        .envelope {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 140px;
+            background: #e3f2fd;
+            border: 3px solid #2196f3;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.2rem;
+            cursor: default;
+            backface-visibility: hidden;
+        }
+
+        .envelope.closed {
+            opacity: 0;
+            animation: fall 1.2s forwards ease-out;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateX(-50%) translateY(-120vh) rotate(-15deg);
+                opacity: 0;
+            }
+            60% {
+                transform: translateX(-50%) translateY(20px) rotate(8deg);
+                opacity: 1;
+            }
+            80% {
+                transform: translateX(-50%) translateY(-10px) rotate(-5deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(0) rotate(0);
+                opacity: 1;
+            }
+        }
+
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid #1976d2;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform-origin: top;
+        }
+
+        .envelope.open .flap {
+            transform: translateX(-50%) rotateX(180deg);
+        }
+
+        .envelope.open {
+            background: #bbdefb;
+            animation: none;
+        }
+
+        .letter {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            max-width: 750px;
+            width: 90%;
+            margin: 25px auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            font-size: 1.15rem;
+            line-height: 1.7;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            position: relative;
+            z-index: 5;
+        }
+
+        .heart {
+            font-size: 3rem;
+            margin: 25px 0;
+            color: #e91e63;
+            animation: heartbeat 1.6s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        #hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            background: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 10;
+            position: relative;
+        }
+
+        button:hover {
+            background: #e91e63;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday My Queen! 🎉👑</h1>
+
+    <div class="envelope-container">
+        <div class="envelope closed" id="envelope">
+            💌
+            <div class="flap" id="flap"></div>
+        </div>
+    </div>
+
+    <div class="letter" id="letter1">
+        To my dearest queen,<br><br>
+        On this special day, I want to remind you how much you mean to me. Your grace, strength, and beauty inspire me every day. I hope your birthday is as beautiful and unforgettable as you are. And I want you to know that you are loved beyond measure — and as long as I'm here, there will always be someone who will love you and be proud of you.<br><br>
+        May your birthday be filled with joy, laughter, and all the love you deserve.<br><br>
+        I want you to know that no matter what happens, you’ll always have someone cheering for you, believing in you, and loving you unconditionally.
+    </div>
+
+    <div class="letter" id="letter2">
+        On your birthday, gusto ko lang malaman mo na kahit anong hirap ng buhay o pag-aaral, sana makaya mong malagpasan. 💌<br><br>
+        I’m always here, naghihintay at sumusuporta sayo. Be happy, and focus on your dreams para maabot mo ‘yun. I’ll reach mine too, and when the time comes, we’ll have money. Ingat ka palagi, and galingan mo sa college journey mo. Gusto ko lang malaman mo na naghihintay lang ako ng tahimik, at walang iba.<br><br>
+        Happy birthday again, my queen.<br><br>
+        With all my love,<br>
+        Your forever admirer<br>
+        — darwin ❤️
+    </div>
+
+    <div class="heart">❤️</div>
+
+    <!-- ✅ FIXED AUDIO: local file, correct type, muted for autoplay readiness -->
+    <audio id="bgmusic" autoplay loop flex>
+        <source src="The 1975 - About You.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="playBtn">Play Music 🎵</button>
+
+    <canvas id="hearts"></canvas>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        const flap = document.getElementById('flap');
+        const letter1 = document.getElementById('letter1');
+        const letter2 = document.getElementById('letter2');
+        const music = document.getElementById('bgmusic');
+        const playBtn = document.getElementById('playBtn');
+
+        const DROP_DURATION = 1200;
+        const OPEN_DELAY = 300;
+        const OPEN_DURATION = 800;
+        const LETTER1_DELAY = 500;
+        const LETTER2_DELAY = 7000;
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                envelope.classList.remove('closed');
+                envelope.classList.add('open');
+                envelope.textContent = '📭';
+                envelope.appendChild(flap);
+            }, DROP_DURATION + OPEN_DELAY);
+
+            setTimeout(() => {
+                letter1.style.opacity = '1';
+                // ✅ Audio will start on user click — no attempt here to avoid block
+            }, DROP_DURATION + OPEN_DELAY + OPEN_DURATION + LETTER1_DELAY);
+
+            setTimeout(() => {
+                letter1.style.opacity = '0';
+                setTimeout(() => {
+                    letter2.style.opacity = '1';
+                }, 400);
+            }, DROP_DURATION + OPEN_DELAY + OPEN_DURATION + LETTER1_DELAY + LETTER2_DELAY);
+        });
+
+        playBtn.addEventListener('click', () => {
+            // ✅ Critical: Unmute before playing (required for first play)
+            music.muted = false;
+            if (music.paused) {
+                music.play().then(() => {
+                    playBtn.textContent = "Pause Music ⏸️";
+                }).catch(e => {
+                    console.error("Audio playback failed:", e);
+                    alert("⚠️ Audio Failed to Play\n\n✅ Please check:\n• File 'about-you.mp3' exists in this folder\n• You're using Live Server (NOT file://)\n• Filename is EXACTLY 'about-you.mp3'\n• Browser tab isn’t muted (🔇 icon)");
+                });
+            } else {
+                music.pause();
+                playBtn.textContent = "Play Music 🎵";
+            }
+        });
+
+        // Floating hearts animation
+        const canvas = document.getElementById('hearts');
+        const ctx = canvas.getContext('2d');
+        let w = canvas.width = window.innerWidth;
+        let h = canvas.height = window.innerHeight;
+
+        const hearts = [];
+        const heartEmoji = '❤️';
+
+        for (let i = 0; i < 35; i++) {
+            hearts.push({
+                x: Math.random() * w,
+                y: Math.random() * h - h,
+                speed: Math.random() * 0.8 + 0.3,
+                size: Math.random() * 18 + 14,
+                opacity: Math.random() * 0.6 + 0.2,
+                drift: (Math.random() - 0.5) * 0.4
+            });
+        }
+
+        function drawHearts() {
+            ctx.clearRect(0, 0, w, h);
+            hearts.forEach(heart => {
+                heart.y += heart.speed;
+                heart.x += heart.drift;
+                if (heart.y > h + 50) {
+                    heart.y = -30;
+                    heart.x = Math.random() * w;
+                }
+                ctx.globalAlpha = heart.opacity;
+                ctx.font = `${Math.floor(heart.size)}px Arial`;
+                ctx.fillText(heartEmoji, heart.x, heart.y);
+            });
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(drawHearts);
+        }
+
+        drawHearts();
+
+        window.addEventListener('resize', () => {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        });
+    </script>
+
+</body>
+</html>
+
